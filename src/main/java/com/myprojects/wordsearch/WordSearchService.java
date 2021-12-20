@@ -135,7 +135,8 @@ public class WordSearchService {
 				if(coordinate.y + word.length() > gridSize) return false;
 				for(int i=0 ; i<word.length(); i++)
 				{
-					if (grid[coordinate.x][coordinate.y + i]!='_') return false;
+					char letter = grid[coordinate.x][coordinate.y + i];
+					if (letter!='_' && letter!=word.charAt(i)) return false;
 				}
 				break;
 				
@@ -143,7 +144,8 @@ public class WordSearchService {
 				if(coordinate.x + word.length() > gridSize) return false;
 				for(int i=0 ; i<word.length(); i++)
 				{
-					if (grid[coordinate.x + i][coordinate.y]!='_') return false;
+					char letter = grid[coordinate.x+i][coordinate.y];
+					if (letter!='_' && letter!=word.charAt(i)) return false;
 				}
 				break;				
 				
@@ -151,7 +153,8 @@ public class WordSearchService {
 				if(coordinate.x + word.length() > gridSize || coordinate.y + word.length() > gridSize) return false;
 				for(int i=0 ; i<word.length(); i++)
 				{
-					if (grid[coordinate.x + i][coordinate.y + i]!='_') return false;
+					char letter = grid[coordinate.x + i][coordinate.y + i];
+					if (letter!='_' && letter!=word.charAt(i)) return false;
 				}
 				break;
 				
@@ -159,7 +162,8 @@ public class WordSearchService {
 				if(coordinate.y  < word.length()) return false;
 				for(int i=0 ; i<word.length(); i++)
 				{
-					if (grid[coordinate.x][coordinate.y - i]!='_') return false;
+					char letter = grid[coordinate.x][coordinate.y - i];
+					if (letter!='_' && letter!=word.charAt(i)) return false;
 				}
 				break;
 				
@@ -167,7 +171,8 @@ public class WordSearchService {
 				if(coordinate.x < word.length()) return false;
 				for(int i=0 ; i<word.length(); i++)
 				{
-					if (grid[coordinate.x - i][coordinate.y]!='_') return false;
+					char letter = grid[coordinate.x - i][coordinate.y];
+					if (letter!='_' && letter!=word.charAt(i)) return false;
 				}
 				break;
 				
@@ -175,7 +180,8 @@ public class WordSearchService {
 				if(coordinate.x < word.length() || coordinate.y < word.length()) return false;
 				for(int i=0 ; i<word.length(); i++)
 				{
-					if (grid[coordinate.x - i][coordinate.y - i]!='_') return false;
+					char letter = grid[coordinate.x - i][coordinate.y - i];
+					if (letter!='_' && letter!=word.charAt(i)) return false;
 				}
 				break;
 		}
